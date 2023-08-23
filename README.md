@@ -37,4 +37,4 @@ As mentioned above, there are largely two approaches to the MSS task: spectrogra
 NMF is an algorithm that decomposes a non-negative matrix $V$ into non-negative factors $B$, and $W$ as shown below, and is known to be effective when analyzing multivariate data.
 
 #### 2.1.2. Ideal Ratio Mask (IRM) Estimation
-
+![IRM](.\IRM.png)
