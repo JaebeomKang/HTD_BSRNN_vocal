@@ -37,6 +37,8 @@ As mentioned above, there are largely two approaches to the MSS task: spectrogra
 NMF is an algorithm that decomposes a non-negative matrix $\textbf{V}$ into non-negative factors $\textbf{B}$, $\textbf{W}$, which is $\textbf{V}\approx \textbf{BW}$. NMF is known to be effective when analyzing multivariate data.
 
 We can observe that each column vector $\textbf{v}$ in $\textbf{V}$ is represented by $\textbf{v}=\textbf{Bw}$, i.e., it can be approximated by a linear combination of the column vectors of $\textbf{B}$ (basis vectors). Therefore, a good approximation means that $\textbf{B}$ contains basis vectors that represent the characteristics of the data well. $\textbf{B}$ and $\textbf{W}$ are obtained by finding a solution that minimizes the cost function between $\textbf{V}$ and $\textbf{BW}$, and the cost function is mainly implemented in audio signal processing by using Kullback-Leibler divergence (KL divergence) and finding a solution using iterative update (Speech denoising using nonnegative matrix factorization with priors).
+$\textbf{S_{train}}\approx \textbf{B_{speech} W_{speech}}$
+$\textbf{M_{train}}\approx \textbf{B_{music} W_{music}}$
 
 #### 2.1.2. Ideal Ratio Mask (IRM) Estimation
  <img src="/IRM.png" style="zoom:50%" />
