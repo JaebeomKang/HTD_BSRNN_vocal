@@ -1,6 +1,8 @@
-# HTD_BSRNN(vocal)
+# Vocal Separation with Hybrid and Band-Split approaches
 
-*Graduation project at Yonsei Univ.*
+*Graduation project by Jaebeom Kang(Yonsei Univ.) & Shin, Wooseok(Yonsei Univ.)*
+
+*This paper was submitted to Yonsei University on June 14th in 2023.*
 
 ## Abstract
 
@@ -13,8 +15,6 @@
 
 
 ## Introduction
-
-<img src="C:\Users\jaebo\AppData\Roaming\Typora\typora-user-images\image-20230823140805323.png" alt="image-20230823140805323" style="zoom: 50%;" />
 
 Music Source Separation (MSS) is a task that extracts sources[stems] such as Vocals, Bass, Drums, etc from a mixture of music inputs. It has wide applications such as music unmixing, and music information retrieval (MIR). Also separated sources can be reused for different versions of the song and located in different spatial positions. Additionally, it has scalability in entertainment and education fields.
 
