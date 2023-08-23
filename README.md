@@ -1,6 +1,6 @@
 # Vocal Separation with Hybrid and Band-Split approaches
 
-*Graduation project by Jaebeom Kang(Yonsei Univ.) & Shin, Wooseok(Yonsei Univ.)*
+*Graduation project by Jaebeom Kang(Yonsei Univ.) & Wooseok Shin(Yonsei Univ.)*
 
 *This paper was submitted to Yonsei University on June 14th in 2023.*
 
@@ -14,7 +14,7 @@
 
 
 
-## Introduction
+## 1. Introduction
 
 Music Source Separation (MSS) is a task that extracts sources[stems] such as Vocals, Bass, Drums, etc from a mixture of music inputs. It has wide applications such as music unmixing, and music information retrieval (MIR). Also separated sources can be reused for different versions of the song and located in different spatial positions. Additionally, it has scalability in entertainment and education fields.
 
@@ -23,3 +23,18 @@ The challenge is that we need to be able to extract only the target stem compone
 Since the 2015 Signal Separation Evaluation Campaign (SiSEC) [3], the MSS community has mainly put forward deep learning models. And by the birth of the reference dataset used for the MSS benchmark consisting of 150 songs in two versions: HQ and non-HQ, called MUSDB18 [4] [5], the research was spurred. Its training set consists of 87 songs. Early MSS models had developed by citing many algorithms used in speech enhancement or speech separation. Most work has focused on training supervised models that separate songs into four stems: drums, bass, vocals, and others (all other instruments). 
 
 There are two main approaches to deep learning models: waveform-based approaches and spectrogram-based approaches. And recently, a hybrid approach[6] that combines the two domains has been gaining traction. The state-of-the-art model, Hybrid transformer demucs using Cross-Domain Transformer is one of them. In this work, we found that HTDemucs did not have the full benefits of hybrid approaches and were imbalanced performing on one domain branch, so we attempted to address this by replacing the existing spectrogram-domain branch with Band-split RNN [7]. We also observe the SDR, Spectrogram, and human perception to verify the performance.
+
+
+
+## 2. Related Works
+
+### 2.1. Time-Frequency Approaches
+
+As mentioned above, there are largely two approaches to the MSS task: spectrogram-based approaches and waveform-based approaches.  Spectrogram-based approaches, also known as Time-Frequency (TF) approaches, use the Short-Time Fourier Transform (STFT), which is used in many areas of audio processing, and its magnitude is called the spectrogram. This can be used to effectively analyze the changes in the various frequency components over time. In the conventional approach, before deep learning was used in MSS, the spectrogram was used to solve the problem.
+
+#### 2.1.1. Non-negative Matrix Factorization(NMF)
+
+NMF is an algorithm that decomposes a non-negative matrix $V$ into non-negative factors $B$, and $W$ as shown below, and is known to be effective when analyzing multivariate data.
+
+#### 2.1.2. Ideal Ratio Mask (IRM) Estimation
+
