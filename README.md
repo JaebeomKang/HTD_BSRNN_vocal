@@ -286,23 +286,23 @@ The effect we expect from the hybrid approach is a more accurate and realistic s
 
 **[Figure. 17]** Spectrogram Comparison in the output of HTDemucs and each branch
 
-<audio src="/audios/mixture.wav"></audio>
+*(Audio is available in \audios\mixture.wav)*
 
 **[Audio. 1]** Mixture sound (Be careful for LOUD sound)
 
-<audio src="/audios/gt.wav"></audio>
+*(Audio is available in \audios\gt.wav)*
 
 **[Audio. 2]** Ground Truth Vocal sound
 
-<audio src="/audios/HTD_hybrid.wav"></audio>
+*(Audio is available in \audios\HTD_hybrid.wav)*
 
 **[Audio. 3]** HTDemucs output sound
 
-<audio src="/audios/HTD_spectral.wav"></audio>
+*(Audio is available in \audios\HTD_spectral.wav)*
 
 **[Audio. 4]** Spectral branch output in HTDemucs
 
-<audio src="/audios/HTD_time.wav"></audio>
+*(Audio is available in \audios\HTD_time.wav)*
 
 **[Audio. 5]** Temporal branch output in HTDemucs
 
@@ -438,23 +438,23 @@ Based on the above conclusions, it is significant that the proposed model achiev
 
 **[Figure. 23]** The Spectrogram comparison
 
-<audio src="/audios/mixture.wav"></audio>
+*(Audio is available in \audios\mixture.wav)*
 
 **[Audio. 1]** Mixture sound (Be careful for LOUD sound)
 
-<audio src="/audios/gt.wav"></audio>
+*(Audio is available in \audios\gt.wav)*
 
 **[Audio. 2]** Ground Truth Vocal sound
 
-<audio src="/audios/HTD_hybrid.wav"></audio>
+*(Audio is available in \audios\HTD_hybrid.wav.wav)*
 
 **[Audio. 3]** HTDemucs output sound
 
-<audio src="/audios/BSRNN.wav"></audio>
+*(Audio is available in \audios\BSRNN.wav)*
 
 **[Audio. 6]** BSRNN output sound
 
-<audio src="/audios/Proposed_hybrid.wav"></audio>
+*(Audio is available in \audios\Proposed_hybrid.wav)*
 
 **[Audio. 7]** Ours output sound
 
@@ -463,6 +463,14 @@ The above figures show the summary of the baseline models and the proposal model
 ![spec_proposed_branch](/images/spec_proposed_branch.PNG)
 
 **[Figure. 24]** The Spectrogram comparison in each branch
+
+*(Audio is available in \audios\Proposed_spectral.wav)*
+
+**[Audio. 8]** Spectral branch output in the Proposed model
+
+*(Audio is available in \audios\Proposed_time.wav)*
+
+**[Audio. 9]** Temporal branch output in the Proposed model
 
 The figure above shows a spectrogram of the output of each branch to check whether we have solved the imbalance performance problem of each branch of HTDemucs. As shown in 'Ours : Time branch', we can see that it contains much more meaningful results compared to the time branch output of the previous HTDemucs. In particular, we can see that the Temporal branch is trained to capture high frequency components, while the Spectral branch is trained to capture low frequency components. The reason for this is that in the case of audio signals, most of the energy is concentrated in low frequencies, so branches with spectrograms as input are stronger for low frequency analysis, and in the case of waveforms, they are relatively stronger for high frequency analysis because they can capture transient events such as sharp edges and fast variations that are difficult to capture in STFT. Considering the branch imbalance problem in HTDemucs, it proves that by fixing the frequency branch, the time branch can also play an even role. As a result, as depicted in Figure 22, we achieved monotonically increasing performance, which HTDemucs couldn't achieve due to the imbalance branch performance. 
 
