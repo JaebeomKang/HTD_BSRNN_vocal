@@ -128,7 +128,7 @@ Note that since the output of Encoder can also be interpreted as estimating each
 
 **[Figure. 3]** Block diagram of Conv-TasNet.
 
-To overcome LSTM’s long temporal dependencies problem, there is an improved model called Conv-TasNet [26], which is improved by using stacked 1-D dilated convolutional blocks including skip-connection. They achieved a better performance with a smaller model size and lower computational complexity. By doing so, it can handle low-power and low-latency MSS. However, it has the problem that artifacts are relatively severe when using relatively short segments.
+To overcome LSTM’s long temporal dependencies problem, there is an improved model called Conv-TasNet [26], which is improved by using stacked 1-D dilated convolutional blocks including skip-connection. They achieved a better performance with a smaller model size and lower computational complexity. By doing so, it can achieve the low-power and low-latency MSS. However, it has the problem that artifacts are relatively severe when using relatively short segments.
 
 #### 2.3.2. Wave-U-Net
 
@@ -136,7 +136,7 @@ To overcome LSTM’s long temporal dependencies problem, there is an improved mo
 
 **[Figure. 4]** Block diagram of Wave-U-Net.
 
-In general audio signal is obtained with a high sampling rate, so it is difficult to use long temporal input due to the memory issue. However, on the contrary, in order to have a good separation performance, long-range temporal correlations are required. Another time-domain approach that attempted to solve this problem was Wave-U-Net [27]. This is a model that uses U-net architecture, which has shown good performance in computer vision area, for 1D signals and becomes one of the two mainstream time-domain models along with TasNet.
+In general, audio signal is obtained with a high sampling rate, so it is difficult to use long temporal input due to the memory issue. However, on the contrary, in order to have a good separation performance, long-range temporal correlations are required. Another time-domain approach that attempted to solve this problem was Wave-U-Net [27]. This is a model that uses U-net architecture, which has shown good performance in computer vision area, for 1D signals and becomes one of the two mainstream time-domain models along with TasNet.
 
 Wave-U-Net has several advantages.  First, it can obtain multi-scale features because it can create high-level features by down-sampling and combine them with high-resolution features by up-sampling due to the structure of the U-net. Second, since it reduces time resolution by half after down-sampling, it can save memory. Third, due to the skip connections, initial phase information can be preserved by delivering to the deeper layers. Two signals whose only difference is a shift in the initial phase are perceptually the same, but can have arbitrarily high direct reconstruction losses on waveforms. So it makes generative models to confuse. But by having skip connections these problems can be mitigated.[28] It will be treated more deeper in Proposed Work section.
 
