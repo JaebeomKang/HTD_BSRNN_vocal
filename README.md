@@ -1,16 +1,15 @@
 # Vocal Separation with Hybrid and Band-Split approaches
 
-*Graduation project by Jaebeom Kang(Yonsei Univ.) & Wooseok Shin(Yonsei Univ.)*
+*This is the graduation project and written by Jaebeom Kang(Yonsei Univ.) & Wooseok Shin(Yonsei Univ.)*
 
-*This paper was submitted to Yonsei University on June 14th in 2023.*
+*This paper was submitted to Yonsei University on June 14th 2023.*
 
 ## Abstract
 
-  This project is about music source separation (MSS), one of the audio signal processing tasks. We briefly reviewed the trend of MSS algorithms and focus on the hybrid domain approach of Hybrid Transformer Demucs (HTDemucs), the current state-of-the-art (SOTA) model. HTDemucs is an end-to-end hybrid source separation model that combines the traditional two mainstream approaches which are the waveform-domain algorithm and the spectrogram-domain algorithm by using cross-domain attention. By doing so it has the advantage of taking the strength of both the time-domain approach and the time-frequency (TF)-domain approach. However, contrary to our expectations, when we actually examined the output of each individual branch, we found that only one side of the branch actually works. And we inferred that these results make the SDR performance saturate more early.
+  This project is about Music Source Separation (MSS), one of the audio signal processing tasks. We briefly reviewed the trend of MSS algorithms and focused on the hybrid domain approach of Hybrid Transformer Demucs (HTDemucs), the current state-of-the-art (SOTA) model. HTDemucs is an end-to-end hybrid source separation model that combines the two mainstream approaches which are the waveform-domain algorithm and the spectrogram-domain algorithm by using cross-domain attention. By doing so, it has the advantage of taking the strength of both the time-domain(waveform) approach and the time-frequency(TF)-domain(spectrogram) approach. So we expected that each branch(U-net) in this model could complement their weaknesses by paying attention to counterpart domain input. (And it is the desired effect of the Hybrid domain approach) However, contrary to our expectations, when we actually examined the output of each individual branch, we found that only one side of the branch actually works. We inferred that these malfunctions made the SDR curve saturate earlier.
+  Based on these findings, we proposed the need to improve the spectral branch of this model and replaced it with the Band-Split RNN (BSRNN), which models spectrograms by splitting them into pre-determined subbands, as a solution. In order to solve the initial phase inconsistency problem that may arise when applying these modifications, we set the objective function as spectrogram reconstruction loss in addition to existing direct reconstruction loss on waveforms. With these approaches, we observed that each branch worked properly(Time branch: Capture high-frequency characteristics better, Spectral branch: Capture low-frequency characteristics better). By these results, we concluded that we mitigated the problem of imbalanced branch performance and maximized the Hybrid effect. We also observed a meaningful increase in SDR score, a performance metric in MSS task, compared to HTDemucs, even with smaller model sizes. 
 
-  Based on these findings, we proposed the need to improve the spectral branch of this model and replaced it with the Band-Split RNN (BSRNN), which models spectrograms by splitting them into pre-determined frequency bands, as a solution. In order to solve the initial phase inconsistency problem that may arise when applying these modifications, we set the objective function as spectrogram reconstruction loss in addition to existing direct reconstruction loss on waveforms. With these approaches, we observed that each branch worked properly(Time branch: Capture high-frequency characteristics better, Spectral branch: Capture low-frequency characteristics better). By these facts, we concluded that we mitigated the problem of imbalanced branch performance. And we also observed an increase in SDR score, a performance metric in MSS task, compared to HTDemucs, with even smaller model size.
-
-**Key words** : *Music Source Separation, Hybrid-domain approach, Band-split approach*
+**Keywords** : *Music Source Separation, Hybrid-domain approach, Band-split approach*
 
 ## Contents
 
