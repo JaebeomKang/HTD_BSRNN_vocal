@@ -477,12 +477,9 @@ The figure above shows a spectrogram of the output of each branch to check wheth
 
 ## 6. Conclusions & Discussions
 
-In our work, we found the problems in the current hybrid models, which is the imbalance branch problem, starting from the simple question that why Hybrid approaches work. We solve these problems by improving spectral analysis in Hybrid Transformer Demucs inspired by Band-Split RNN. When we tried to combine them, we encountered several problems in implementations such as Initial Phase Inconsistency, Selection of hidden size, and Memory problems. To solve these, we tried various attempts by comparing the results and also we used the appropriate objective function.
+In our work, we found the problems in the current hybrid models, which is the imbalance branch problem, starting from the simple question that why Hybrid approaches work. We solve these problems by improving spectral analysis in Hybrid Transformer Demucs inspired by Band-Split RNN. When we tried to combine them, we encountered several problems in implementations such as Initial Phase Inconsistency, Selection of hidden size, and Memory problems. To solve these, we made various modifications and also we used the appropriate objective function.
 
-Our approaches have two contributions: First, we improved the spectral branch in Hybrid Transformer Demucs to maximize the hybrid effect. Second, we adapted the hybrid approach to Band-split RNN.
-
-We achieved better performance than two baseline models with smaller model size. It’s because by using dense subbands with low FC dimension, we can reduce the model size maintaining high frequency resolution. And we also observed the balanced hybrid performance in each branch by analyzing the spectrogram. By these results, we prove that good design in one branch can affect other side branch in Cross Transformer. Because we didn’t modify time branch at all, but time branch performance was significantly improved. Furthermore, we observed the hybrid approach effect by adapting hybrid approach to BSRNN.
-
+Our approaches have two contributions: First, we improved the spectral branch in Hybrid Transformer Demucs to maximize the hybrid effect. Second, we adapted the hybrid approach to Band-split RNN. We achieved better performance than two baseline models with smaller model sizes. It’s because by using dense subbands with low FC dimension, we can reduce the model size maintaining high frequency resolution. We also observed the balanced hybrid performance in each branch by analyzing the spectrogram: The temporal branch can capture the high frequency characteristics, and the spectral branch can capture the low frequency characteristics.
 
 
 ## Reference
