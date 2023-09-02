@@ -1,8 +1,7 @@
 # Vocal Separation with Hybrid and Band-Split approaches
 
-*This is the graduation project and written by Jaebeom Kang(Yonsei Univ.) & Wooseok Shin(Yonsei Univ.)*
+*This report was written by Jaebeom Kang & Wooseok Shin*
 
-*This paper was submitted to Yonsei University on June 14th 2023.*
 
 ## Abstract
 
