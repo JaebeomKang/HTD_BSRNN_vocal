@@ -1,8 +1,5 @@
 # Vocal Separation with Hybrid and Band-Split approaches
 
-*This report was written by Jaebeom Kang & Wooseok Shin*
-
-
 ## Abstract
 
   This project is about Music Source Separation (MSS), one of the audio signal processing tasks. We briefly reviewed the trend of MSS algorithms and focused on the hybrid domain approach of Hybrid Transformer Demucs (HTDemucs), the current state-of-the-art (SOTA) model. HTDemucs is an end-to-end hybrid source separation model that combines the two mainstream approaches which are the waveform-domain algorithm and the spectrogram-domain algorithm by using cross-domain attention. By doing so, it has the advantage of taking the strength of both the time-domain(waveform) approach and the time-frequency(TF)-domain(spectrogram) approach. So we expected that each branch(U-net) in this model could complement their weaknesses by paying attention to counterpart domain input. (And it is the desired effect of the Hybrid domain approach) However, contrary to our expectations, when we actually examined the output of each individual branch, we found that only one side of the branch actually works. We inferred that these malfunctions made the SDR curve saturate earlier.
